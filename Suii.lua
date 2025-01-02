@@ -3,7 +3,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 
 local Window = Library:NewWindow("Arbix")
 
-local Section = Window:NewSection("Teleportation")
+local Section = Window:NewSection("OP THINGS")
 
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -54,7 +54,7 @@ local function toggleTeleportation()
 end
 
 -- Create a toggle button for teleportation in the UI
-Section:CreateToggle("Toggle Teleport to Chests", function(value)
+Section:CreateToggle("AUTO FARM | OP", function(value)
     teleporting = value -- Set the teleporting variable based on the toggle state
     if teleporting then
         teleportToChests() -- Start teleporting if toggled on
@@ -62,7 +62,7 @@ Section:CreateToggle("Toggle Teleport to Chests", function(value)
 end)
 
 -- Button to manually teleport to chests
-Section:CreateButton("Teleport to All Chests Now", function()
+Section:CreateButton("Tp to all chest now", function()
     teleporting = true -- Set teleporting to true to allow teleportation
     teleportToChests() -- Call the teleport function directly
     teleporting = false -- Reset teleporting after the teleportation is done
