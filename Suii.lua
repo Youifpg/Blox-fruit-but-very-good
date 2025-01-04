@@ -99,6 +99,9 @@ Section:CreateButton("Get Dragon East Fruit", function()
 
     game:GetService("ReplicatedStorage").ALLREMBINDS.MainRemoteEvent:FireServer(unpack(args))
 end)
+
+local Section = Window:NewSection("INF MASTERY")
+
 Section:CreateButton("Get Mastery West", function()
 while true do 
     local args = {
