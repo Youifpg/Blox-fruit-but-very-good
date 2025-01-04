@@ -99,3 +99,38 @@ Section:CreateButton("Get Dragon East Fruit", function()
 
     game:GetService("ReplicatedStorage").ALLREMBINDS.MainRemoteEvent:FireServer(unpack(args))
 end)
+Section:CreateButton("Get Mastery West", function()
+while true do 
+    local args = {
+    [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
+    [2] = "GiveMasteryEXPTO__Smthh",
+    [3] = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "Dragon (West)",
+        [3] = 85,
+        [4] = true
+    }
+}
+
+game:GetService("ReplicatedStorage").ALLREMBINDS.MainRemoteEvent:FireServer(unpack(args)) 
+    wait() 
+        end
+    end)
+
+Section:CreateButton("Get Mastery East", function()
+while true do 
+    local args = {
+    [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
+    [2] = "GiveMasteryEXPTO__Smthh",
+    [3] = {
+        [1] = game:GetService("Players").LocalPlayer,
+        [2] = "Dragon (East)",
+        [3] = 85,
+        [4] = true
+    }
+}
+
+game:GetService("ReplicatedStorage").ALLREMBINDS.MainRemoteEvent:FireServer(unpack(args)) 
+    wait() 
+        end
+    end)
