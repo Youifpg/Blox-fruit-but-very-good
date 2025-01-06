@@ -16,36 +16,32 @@ Section:CreatButton("Collect chest", function()
                 firetouchinterest(localPlayer.Character.HumanoidRootPart, v, 0)
                 firetouchinterest(localPlayer.Character.HumanoidRootPart, v, 1)
             end
-        end
-end)
-
+        end)
+--
 Section:CreatButton("Kill all players/npc", function()
         for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
                     Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","Main_DamgeR___",{character, {Using = "Combat", Damge = 999999, FromPlayer = localPlayer}})
                 end
             end
-        end
-end)
-
+        end)
+--
 Section:CreateButton("damge all players", function()
     for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
                     Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","Main_DamgeR___",{character, {Using = "Combat", Damge = 9999, FromPlayer = localPlayer}})
                 end
             end
-        end
-end)
-
+        end)
+--
 Section:CreatButton("fling everything", function()
 for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
                     Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","ASeemblyLinearVEllChangerr",{character:FindFirstChild("HumanoidRootPart"),Vector3.new(0, 100, 0)})
                 end
             end
-        end
-end)
-
+        end)
+--
 local Section = Window:NewSection("FRUTIS")
 -- Button to get Dragon West fruit
 Section:CreateButton("Get Dragon West Fruit", function()
@@ -85,5 +81,4 @@ Section:CreateButton("Get Mastery aall fruits", function()
 for _,v in ipairs(fruits:GetChildren()) do
                 Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","GiveMasteryEXPTO__Smthh",{game:GetService("Players").LocalPlayer,v.Name,99999999,true})
             end
-        end
-    end)
+        end)
