@@ -1,4 +1,19 @@
 -- dont steal if you steal you are gay and if you want it realy give credit : Touka arbix hub
+local localPlayer = game:GetService("Players").LocalPlayer
+local npc = workspace:WaitForChild("Characters")
+local Remote = game:GetService("ReplicatedStorage"):WaitForChild("ALLREMBINDS"):WaitForChild("MainRemoteEvent")
+local fruits = game:GetService("Players").LocalPlayer.PlayerStats.Tools
+local chest = workspace.World.Chests
+
+local flingpower = 1000
+local dmg = 100
+local aurascale = 1
+
+local animationNames = {}
+for _, anim in ipairs(game:GetService("ReplicatedStorage").AllAnims.PreLoad.Dafult:GetChildren()) do
+    if anim:IsA("Animation") then table.insert(animationNames, anim.Name) end
+end
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local Window = Library:NewWindow("Arbix")
