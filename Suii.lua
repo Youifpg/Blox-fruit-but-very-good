@@ -24,65 +24,41 @@ local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 
-local teleporting = false -- Variable to track if teleportation is active
-
--- Function to teleport to all chests
-local function teleportToChests()
-    local chestsFolder = workspace:FindFirstChild("World") and workspace.World:FindFirstChild("Chests")
-    
-    if chestsFolder then
-        local chests = {}
-        
-        -- Collect all chests
-        for _, chest in ipairs(chestsFolder:GetChildren()) do
-            if chest:IsA("Part") then
-                table.insert(chests, chest)
+Section:CreatButton("Collect chest", function()
+ for _,v in ipairs(chest:GetChildren()) do
+                firetouchinterest(localPlayer.Character.HumanoidRootPart, v, 0)
+                firetouchinterest(localPlayer.Character.HumanoidRootPart, v, 1)
             end
         end
-        
-        -- Freeze the character
-        humanoid.PlatformStand = true
-        
-        -- Teleport to each chest
-        for _, chest in ipairs(chests) do
-            if teleporting then -- Check if teleporting is still active
-                character:SetPrimaryPartCFrame(chest.CFrame)
-                wait(0.1) -- Wait for 0.1 seconds before teleporting to the next chest
-            else
-                break -- Exit the loop if teleporting is no longer active
+end)
+Section:CreatButton("Kill all players/npc", function()
+        for _, character in pairs(npc:GetChildren()) do
+                if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
+                    Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","Main_DamgeR___",{character, {Using = "Combat", Damge = 999999, FromPlayer = localPlayer}})
+                end
             end
         end
-        
-        -- Unfreeze the character after teleportation
-        humanoid.PlatformStand = false
-    else
-        warn("No chests found in workspace.World.Chests")
-    end
-end
-
--- Function to toggle teleportation
-local function toggleTeleportation()
-    teleporting = not teleporting -- Toggle the state
-    if teleporting then
-        teleportToChests() -- Start teleporting if toggled on
-    end
-end
-
--- Create a toggle button for teleportation in the UI
-Section:CreateToggle("AUTO FARM | OP", function(value)
-    teleporting = value -- Set the teleporting variable based on the toggle state
-    if teleporting then
-        teleportToChests() -- Start teleporting if toggled on
-    end
 end)
 
--- Button to manually teleport to chests
-Section:CreateButton("Tp to all chest now", function()
-    teleporting = true -- Set teleporting to true to allow teleportation
-    teleportToChests() -- Call the teleport function directly
-    teleporting = false -- Reset teleporting after the teleportation is done
+Section:CreateButton("damge all players", function()
+    for _, character in pairs(npc:GetChildren()) do
+                if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
+                    Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","Main_DamgeR___",{character, {Using = "Combat", Damge = 9999, FromPlayer = localPlayer}})
+                end
+            end
+        end
 end)
 
+Section:CreatButton("fling everything", function()
+for _, character in pairs(npc:GetChildren()) do
+                if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
+                    Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","ASeemblyLinearVEllChangerr",{character:FindFirstChild("HumanoidRootPart"),Vector3.new(0, 100, 0)})
+                end
+            end
+        end
+end)
+
+local Section = Window:NewSection("FRUTIS")
 -- Button to get Dragon West fruit
 Section:CreateButton("Get Dragon West Fruit", function()
     local args = {
@@ -117,38 +93,9 @@ end)
 
 local Section = Window:NewSection("INF MASTERY")
 
-Section:CreateButton("Get Mastery West", function()
-while true do 
-    local args = {
-    [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
-    [2] = "GiveMasteryEXPTO__Smthh",
-    [3] = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "Dragon (West)",
-        [3] = 85,
-        [4] = true
-    }
-}
-
-game:GetService("ReplicatedStorage").ALLREMBINDS.MainRemoteEvent:FireServer(unpack(args)) 
-    wait() 
-        end
-    end)
-
-Section:CreateButton("Get Mastery East", function()
-while true do 
-    local args = {
-    [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
-    [2] = "GiveMasteryEXPTO__Smthh",
-    [3] = {
-        [1] = game:GetService("Players").LocalPlayer,
-        [2] = "Dragon (East)",
-        [3] = 85,
-        [4] = true
-    }
-}
-
-game:GetService("ReplicatedStorage").ALLREMBINDS.MainRemoteEvent:FireServer(unpack(args)) 
-    wait() 
+Section:CreateButton("Get Mastery aall fruits", function()
+for _,v in ipairs(fruits:GetChildren()) do
+                Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","GiveMasteryEXPTO__Smthh",{game:GetService("Players").LocalPlayer,v.Name,99999999,true})
+            end
         end
     end)
