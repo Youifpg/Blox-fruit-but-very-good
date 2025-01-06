@@ -37,12 +37,12 @@ local Section = Window:NewSection("FRUITS")
 
 local items = {"Dragon (West) Fruit", "Dragon (East) Fruit", "Flame Fruit", "Kitsune Fruit", "Leopard Fruit", "Dough Fruit", "Magma Fruit", "Venom Fruit", "Light Fruit", "Ice Fruit", "Hito Fruit", "Control Fruit"}
 
-Section:CreateButton("Get all fruits", function()
+Section:CreateDropdown("DropDown", {items}, 2, function(text)
     local args = {
         [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
         [2] = "AddToolToBackpackKKK",
         [3] = {
-            [1] = items,
+            [1] = text,
             [2] = localPlayer.Backpack,
             [3] = true,
             [4] = true
