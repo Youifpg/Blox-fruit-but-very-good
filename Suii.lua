@@ -6,7 +6,7 @@ local chest = workspace.World.Chests
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
-local Window = Library:NewWindow("Arbix")
+local Window = Library:NewWindow("Arbix Hub")
 
 local Section = Window:NewSection("OP THINGS")
 
@@ -17,7 +17,7 @@ Section:CreateButton("Collect chest", function()
     end
 end)
 
-Section:CreateButton("Damage all players", function()
+Section:CreateButton("kill all players/npc", function()
     for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
                     Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","Main_DamgeR___",{character, {Using = "Combat", Damge = 9999, FromPlayer = localPlayer}})
