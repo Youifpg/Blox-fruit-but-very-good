@@ -27,10 +27,11 @@ end)
 
 Section:CreateButton("Damage all players", function()
     for _, character in pairs(npc:GetChildren()) do
-        if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
-            Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX", "Main_DamageR___", {character, {Using = "Combat", Damage = 9999, FromPlayer = localPlayer}})
+                if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
+                    Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","Main_DamgeR___",{character, {Using = "Combat", Damge = 9999, FromPlayer = localPlayer}})
+                end
+            end
         end
-    end
 end)
 
 Section:CreateButton("Fling everything", function()
