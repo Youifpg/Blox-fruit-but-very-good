@@ -34,13 +34,13 @@ Section:CreateButton("Fling everything", function()
 end)
 
 local Section = Window:NewSection("FRUITS")
-local fruits = {"Dragon (West) Fruit", "Dragon (East) Fruit", "OrbCandy", "OrbHalloween", "OrbQuake", "OrbShanks", "Orbblack", "Orbblue", "Orbcures", "Orbflame", "Orbgreen", "Orbkj", "Orbshadow", "Orbsky", "finger"}
+local fruits = {"Dragon (West) Fruit", "Dragon (East) Fruit", "Flame Fruit", "Venom Fruit", "Control Fruit", "Hito Fruit", "Dough Fruit", "Leopard Fruit", "Kitsune Fruit", "Magma Fruit", "Ice Fruit"}
 Section:CreateButton("Get all fruits", function()
     local args = {
         [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
         [2] = "AddToolToBackpackKKK",
         [3] = {
-            [1] = "Dragon (West) Fruit",
+            [1] = fruits,
             [2] = localPlayer.Backpack,
             [3] = true,
             [4] = true
