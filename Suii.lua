@@ -17,14 +17,6 @@ Section:CreateButton("Collect chest", function()
     end
 end)
 
-Section:CreateButton("Kill all players/npc", function()
-    for _, character in pairs(npc:GetChildren()) do
-        if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
-            Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX", "Main_DamageR___", {character, {Using = "Combat", Damage = 9999, FromPlayer = localPlayer}})
-        end
-    end
-end)
-
 Section:CreateButton("Damage all players", function()
     for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
