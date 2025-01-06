@@ -5,24 +5,11 @@ local Remote = game:GetService("ReplicatedStorage"):WaitForChild("ALLREMBINDS"):
 local fruits = game:GetService("Players").LocalPlayer.PlayerStats.Tools
 local chest = workspace.World.Chests
 
-local flingpower = 1000
-local dmg = 100
-local aurascale = 1
-
-local animationNames = {}
-for _, anim in ipairs(game:GetService("ReplicatedStorage").AllAnims.PreLoad.Dafult:GetChildren()) do
-    if anim:IsA("Animation") then table.insert(animationNames, anim.Name) end
-end
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
 
 local Window = Library:NewWindow("Arbix")
 
 local Section = Window:NewSection("OP THINGS")
-
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
 
 Section:CreatButton("Collect chest", function()
  for _,v in ipairs(chest:GetChildren()) do
@@ -31,6 +18,7 @@ Section:CreatButton("Collect chest", function()
             end
         end
 end)
+
 Section:CreatButton("Kill all players/npc", function()
         for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
