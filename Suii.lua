@@ -34,7 +34,7 @@ Section:CreateButton("damge all players", function()
             end
         end)
 --
-Section:CreatButton("fling everything", function()
+Section:CreateButton("fling everything", function()
 for _, character in pairs(npc:GetChildren()) do
                 if character:IsA("Model") and character:FindFirstChild("Humanoid") and character.Name ~= localPlayer.Name then
                     Remote:FireServer("EMMFOSS__!ZCNSJNXCSDWQSANBX","ASeemblyLinearVEllChangerr",{character:FindFirstChild("HumanoidRootPart"),Vector3.new(0, 100, 0)})
