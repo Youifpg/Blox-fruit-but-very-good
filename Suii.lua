@@ -43,7 +43,7 @@ Section:CreateDropdown("select fruit", {"Dragon (West) Fruit", "Dragon (East) Fr
             [1] = text,
             [2] = localPlayer.Backpack,
             [3] = true,
-            [4] = true
+            [4] = false
         }
     }
 
